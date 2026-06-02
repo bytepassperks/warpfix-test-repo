@@ -1,8 +1,7 @@
 function sortedDescending(arr) {
-  return arr.sort((a, b) => b - a);
+  return [...arr].sort((a, b) => b - a);
 }
 function withAppended(arr, value) {
-  arr.push(value);
-  return arr;
+  return [...arr, value];
 }
 module.exports = { sortedDescending, withAppended };
