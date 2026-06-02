@@ -1,0 +1,20 @@
+// Pagination helpers. Pages are 1-indexed (page 1 is the first page).
+
+// Return the slice of items belonging to the given page.
+// BUG: the start index uses `page * pageSize`, but for 1-indexed pages
+// page 1 must start at index 0. As written, page 1 skips the first
+// `pageSize` items (classic off-by-one).
+function paginate(items, page, pageSize) {
+  const start = page * pageSize;
+  const end = start + pageSize;
+  return items.slice(start, end);
+}
+
+// Number of pages needed to display all items.
+// BUG: uses Math.floor, which drops the final partial page
+// (e.g. 10 items / 3 per page should be 4 pages, not 3).
+function pageCount(totalItems, pageSize) {
+  return Math.floor(totalItems / pageSize);
+}
+
+module.exports = { paginate, pageCount };
