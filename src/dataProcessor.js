@@ -23,7 +23,7 @@ function parseCSV(csvString) {
     const record = {};
 
     headers.forEach((header, idx) => {
-      record[header] = values[idx] !== undefined ? values[idx] : null;
+      record[header] = values[idx] !== undefined ? (header === 'sales' ? parseFloat(values[idx]) : values[idx]) : null;
     });
 
     records.push(record);
