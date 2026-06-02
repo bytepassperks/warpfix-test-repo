@@ -13,3 +13,5 @@ console.log("All tests passed!");
 // e2e re-run after deterministic parser e1047eb (16:49:57Z)
 
 // e2e clean run after safety fix dc9c427 (16:57:41Z)
+
+// e2e fresh run after GitHub Models fallback 968dec9 + Groq daily reset (17:23:58Z)
