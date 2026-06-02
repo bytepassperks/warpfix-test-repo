@@ -8,16 +8,15 @@ function getRecordById(db, id) {
 }
 
 // Resolve a user's display name by id.
-// BUG: the async lookup is not awaited, so `record` is a pending Promise
-// (always truthy) and `record.name` is undefined.
+// FIX: Await the async lookup to get the actual record.
 async function getUserName(db, id) {
-  const record = getRecordById(db, id);
+  const record = await getRecordById(db, id);
   return record ? record.name : 'unknown';
 }
 
 // Returns true if the user exists in the data source.
 async function userExists(db, id) {
-  const record = getRecordById(db, id);
+  const record = await getRecordById(db, id);
   return record !== null;
 }
 
