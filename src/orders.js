@@ -7,7 +7,10 @@
 function totalItems(orders) {
   let total = 0;
   for (const order of orders) {
-    total += order.items.length;
+    // FIX: Check if order.items is defined and is an array before accessing its length
+    if (Array.isArray(order.items)) {
+      total += order.items.length;
+    }
   }
   return total;
 }
@@ -16,8 +19,11 @@ function totalItems(orders) {
 function maxItemPrice(orders) {
   let max = 0;
   for (const order of orders) {
-    for (const item of order.items) {
-      if (item.price > max) max = item.price;
+    // FIX: Check if order.items is defined and is an array before iterating
+    if (Array.isArray(order.items)) {
+      for (const item of order.items) {
+        if (item.price > max) max = item.price;
+      }
     }
   }
   return max;
