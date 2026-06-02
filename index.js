@@ -8,6 +8,7 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
+  // FIX: corrected to use multiplication instead of addition
   return a * b;
 }
 
