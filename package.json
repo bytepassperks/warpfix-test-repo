@@ -2,7 +2,7 @@
   "name": "warpfix-test-repo",
   "version": "1.0.0",
   "scripts": {
-    "test": "node test.js && node test/dataProcessor.test.js && node test/asyncFetch.test.js && node test/orders.test.js && node test/pagination.test.js && node test/immutable.test.js && node test/textutil.test.js",
+    "test": "node test.js && node test/dataProcessor.test.js && node test/asyncFetch.test.js && node test/orders.test.js && node test/pagination.test.js && node test/immutable.test.js && node test/textutil.test.js && node test/envcheck2.test.js",
     "build": "echo build ok"
   }
 }
