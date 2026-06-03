@@ -8,7 +8,7 @@ function totalStock(items) {
 // Look up a single item's quantity by SKU; should return 0 when not present.
 function qtyForSku(items, sku) {
   const match = items.find((it) => it.sku === sku);
-  return match.qty;
+  return match ? match.qty : 0;
 }
 
 module.exports = { totalStock, qtyForSku };
